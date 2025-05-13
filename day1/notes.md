@@ -73,36 +73,36 @@
     rename
     mv <oldnamefile> <newnamefile>   
  # VIM
-   virtual imorove
-   vim
-     command mode
-     insert
-     extend mode
-     vim filename (flow of modes) 
-       command --(i)-->insert --(esc)-->command
-       command --(shift + :)-->extend --(esc)-->command
-    command in extend mode 
-      W ->write
-      q ->Quit
-      wq ->write and quit
-      wq! ->write and quit forcefully
-      q! ->quit Forcefully
-      se nu ->serial number
-      se nonu -> no serial number
-    commands in command mode
-      yy ->copy line
-      yw ->copy word
-      nyy ->copy number of line (replace n with number)
-      dd ->delete line
-      dw ->delete word
-      ndd ->number of line delete
-      p ->paste
-      u ->undo
-      ctr + ->redo
-      gg ->go to top
-      g ->go to buttom
-      ng ->go to n line
-    
+       virtual imorove
+       vim
+         command mode
+         insert
+         extend mode
+         vim filename (flow of modes) 
+           command --(i)-->insert --(esc)-->command
+           command --(shift + :)-->extend --(esc)-->command
+        command in extend mode 
+          W ->write
+          q ->Quit
+          wq ->write and quit
+          wq! ->write and quit forcefully
+          q! ->quit Forcefully
+          se nu ->serial number
+          se nonu -> no serial number
+        commands in command mode
+          yy ->copy line
+          yw ->copy word
+          nyy ->copy number of line (replace n with number)
+          dd ->delete line
+          dw ->delete word
+          ndd ->number of line delete
+          p ->paste
+          u ->undo
+          ctr + ->redo
+          gg ->go to top
+          g ->go to buttom
+          ng ->go to n line
+        
     
 
 
