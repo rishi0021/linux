@@ -102,8 +102,84 @@
           gg ->go to top
           g ->go to buttom
           ng ->go to n line
+
+  # user
+     what is a user
+     -user is the name of computer account which is able to login into computer
+
+     types
+     -system user
+         created and deleted automatically when os is installed
+     -normanl user
+         created and deleted by privillage user
+    user id
+    -system user 
+        0-999
+    -normal user
+        1000+
+    user account properties 
+    - /etc/password
+    user password properties 
+    - /etc/shadow
+
+    steps to manage account
+    1) create user 
+        useradd uname
+    2) check properties
+        grep username /etc/password
+        output 
+        sachin:x:1001:1001::/home/sachin:/bin/bash
+
+        sachin -username
+        X-mask
+        1001-Userid
+        1001-group id
+        ' '- comment
+        /home/sachin -home directory 
+        /bin/bash -shell
+    3) set password 
+        password username
         
+    4) check password 
+        grep sachin /etc/shadow
+        output:                sachin:$6$rounds=100000$DVcBnELqH82yLi8r$tVZRwExzBf2n7mBTmn7TjWqz5MNTy7lWRvlSYxdZ0E1xjUYKZxYor4ZHJfmUs.ZsdaVPqUicoGtyF8WDz1xj0.:20221:0:99999:7:::
+
+        sachin -username
+        $6$rounds=100000$DVcBnELqH82yLi8r$tVZRwExzBf2n7mBTmn7TjWqz5MNTy7lWRvlSYxdZ0E1xjUYKZxYor4ZHJfmUs.ZsdaVPqUicoGtyF8WDz1xj0 - maskpassword
+        20221 -days from 1969
+        0 - min life of password
+        99999 - max life of password 
+        7 -warning days
+        :: -password inactive
+        :: -expire day
+
+
+    5) switch user 
+        su username
+    6) logout from user
+        ctr + d
+    7) delete user account 
+        userdel -r sachin  (deleted user with  the directories)
+        userdel sachin (delete user without directories)
+# modify user properties 
+    1)login name 
+        usermod -l new old
+    2)userid
+        usermod -u uid username
+    3)comment
+        usermod -c "comment" username
+    4)directory
+        usermod -d /directory username
+    5)shell
+        usermod -s /sbin/nologin username
+    6)password expire
+        usermod -e 'date' username
+    7)lock password
+        usermod -L uid username
+    8)Unlock password
+        usermod -U uid username
     
+
 
 
 
