@@ -65,20 +65,13 @@
         userdel username (delete user without directories)
     # user modification
         usermod -l new old (login name)
-    2)userid
-        usermod -u uid username
-    3)comment
-        usermod -c "comment" username
-    4)directory
-        usermod -d /directory username
-    5)shell
-        usermod -s /sbin/nologin username
-    6)password expire
-        usermod -e 'date' username
-    7)lock password
-        usermod -L uid username
-    8)Unlock password
-        usermod -U uid username
+        usermod -u uid username (userid)
+        usermod -c "comment" username (comment)
+        usermod -d /directory username (directory)
+        usermod -s /sbin/nologin username (shell)
+        usermod -e 'date' username (password expire)
+        usermod -L uid username (lock password)
+        usermod -U uid username (Unlock password)
     
         
         
