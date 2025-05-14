@@ -72,8 +72,17 @@
         usermod -e 'date' username (password expire)
         usermod -L uid username (lock password)
         usermod -U uid username (Unlock password)
-    
-        
-        
-        
-    
+    # group
+        group account properties -grep gname /etc/group
+        group admin properties -group gname/etc/shadow
+    # group modification
+        groupadd gname (create group)
+        grep gname /etc/group (check group property)
+        groupmod -g newid gname (change groupid)
+        gpasswd -a member gname (Add single member)
+        gpasswd -d member gname (remove member)
+        gpasswd -M member1,member2,member3 gname (add/ remove multiple member)
+        groupdel gname  (delete group)
+        grep gname /etc/gshadow (check admin property)
+        gpasswd -A user gname (make admin)
+        id user (check user group menbership)
