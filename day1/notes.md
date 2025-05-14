@@ -178,9 +178,46 @@
         usermod -L uid username
     8)Unlock password
         usermod -U uid username
+ # Group
+     -collection of user accounts.
+     Types
+     
+     1)Primary group
+     created and seleted with user account operations
+     2)Secoandary group
+    created and deleted using privillage users
+
+    -group account DB
+    group account properties -/etc/group
+    group admin properties -/etc/shadow
+# Steps to manage group
+    1)create group
+        groupadd gname
+    2)check group property
+        grep gname /etc/group
+    3)change groupid
+        groupmod -g newid gname
+    4) Add single member
+        gpasswd -a member gname
+    5) remove member
+        gpasswd -d member gname
+    6) add/ remove multiple member
+        gpasswd -M member1,member2,member3 gname (m is use to overright)
+    7) delete group
+        groupdel gname
+    8) check admin property 
+        grep gname /etc/gshadow
+    9)make admin 
+        gpasswd -A user gname
+    10) check user group menbership
+        id user
+    11) change owner file/dir
+        chown user /dir
+    12) change groupowner of dir 
+        chgrp gname /dir
+    13) details 
+        ls -ld /dir
+        
     
-
-
-
 
   
