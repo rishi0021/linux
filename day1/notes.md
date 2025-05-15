@@ -217,7 +217,67 @@
         chgrp gname /dir
     13) details 
         ls -ld /dir
+    
+# Permissin=ion
+    - use to manage file and directories
+    1)Basic 
+    2)ACL
+    3)Specal
+
+    check permission of file 
+        -ls -l /file.txt
+        output 
+            -rw-r--r--. 1 ec2-user ec2-user 0 May 15 06:24 idex.txt
+            - (type -> - file, d -> dir, l -> shortcut)
+            rw- (creator/user) r -> read 4, w-> write 2, x ->exicute 1 ,- ->deny 0
+            r-- (group owner)
+            r-- (other)
+            ec2-user (user)
+            ec2-user (group )
+            1 (link)
+            0 (size)
+            May 15 06:24 (date) 
+            idex.txt.
+
+    check permission for dir
+        -ls -ld /file.txt
+        output 
+            drwxr-xr-x. 2 ec2-user ec2-user 6 May 15 06:23 mumbai
+    change permission
+        chmod ugo+rwx /file (add)
+        chmod ugo-rwx /file (remove)
+    ACL 
+    helps to provide permission to specific user and group 
+    (like -others who are not part of group but not to all others )
+    check permission 
+    getFacl /file
+    output
+        
+        # file: mumbai
+        # owner: ec2-user
+        # group: ec2-user
+        user::rwx
+        group::rwx
+        other::rwx
+
+
+    set permission 
+    setfacl -m u:uname:rwx /folder
+    -m  add or modify
+    u user
+
+    remove permission
+    setfacl -x u:uname: /file
+
+    remove all acl 
+    setfacl -b u:uname: /file
+
+    Specal permission
+    
+        
+
+    
+        
         
     
-
-  
+    
