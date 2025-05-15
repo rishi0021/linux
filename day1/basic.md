@@ -86,3 +86,14 @@
         grep gname /etc/gshadow (check admin property)
         gpasswd -A user gname (make admin)
         id user (check user group menbership)
+    # permission
+        Basic
+        ls -ld /file (check permission for dir)
+        ls -l /file.txt  (check permission of file)
+        chmod ugo+rwx /file (add)
+        chmod ugo-rwx /file (remove)
+        ACL
+        getfacl file (check ACL)
+        setfacl -m u:uname:rwx /folder (set permission )
+        setfacl -x u:uname: /file (remove permission)
+        setfacl -b u:uname: /file (remove all acl )
