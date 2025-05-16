@@ -273,11 +273,102 @@
     setfacl -b u:uname: /file
 
     Specal permission
+
+
+
+    Regular expression
+	It is a process of search file and directory basis on specific word, name, permission,         ownership etc.
+    1)grep
+    2)find    
+    3)head
+    4)tail
+    5)WC
+
+    Grep  (global regular expression print)
+    Grep command use for search character or keyword in a file, if the search pattern matched       grep show the whole line
     
+        -grep keyword /file
         
+        case sensitive
+        -grep -i keyword /file
+        
+        List files in which the word match
+        -Grep -l keyword /location
+    	
+        List recursive/ dir in which the word match
+        -Grep -r keyword /location
+    	
+        List file that dose not match the file 
+        -Grep -v keyword /location               
+        
+        list the line number
+        -Grep -n keyword /location
+        
+        list number of finds
+        -Grep -c keyword /location
+        
+        list starting with keyword
+        -Grep  ^keyword /location
+        
+        List ending keyword
+        -Grep keyword$ /location
+        
+        search and redirect to other file 
+        -Grep keyword /location > /newfile.txt  
+        
+        search and append to other file 
+        -Grep keyword /location >> /newfile.txt     
+
+    Find 
+    command use for search basis on name,permissionowner,size, etc
+
+    search by name
+    -find /location -name filename
+
+    search by size 
+    -find /loction -size size
+    
+    search by size 
+    -find /loction -size size
+    
+    search by user 
+    -find /loction -user uname
+
+    search by group
+    -find /loction -group gname
+
+    search by permission
+    -find /loction -perm 777
+
+    executable command 
+    helps to exec 2 commands one after the other 
+    -exe
+
+    search all file and move it to backup
+    -find /tata -user suraj -exec cp -rvf {} /backup/ \;
+
+    Head
+    shows top 10 line
+    -head /etc/passwd
+
+    show top 5 line
+    -head -n 5 /file
+
+    Tail
+    
+    show bottom 10 line
+    -tail /file
+    show bottom 5 line
+    -tail -n 5 /file
+
+    WC
+    show count of line word and charecter
+
+    wc /location (-l line, -w word, -c char)
 
     
-        
+    
+    
         
     
     
