@@ -218,7 +218,7 @@
     13) details 
         ls -ld /dir
     
-# Permissin=ion
+# Permission
     - use to manage file and directories
     1)Basic 
     2)ACL
