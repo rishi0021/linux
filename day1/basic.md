@@ -97,3 +97,35 @@
         setfacl -m u:uname:rwx /folder (set permission )
         setfacl -x u:uname: /file (remove permission)
         setfacl -b u:uname: /file (remove all acl )
+    # Regular expression
+        Grep
+        -grep keyword /file
+        -grep -i keyword /file ( case sensitive)
+        -Grep -l keyword /location (List files in which the word match)
+        -Grep -r keyword /location (List recursive/ dir in which the word match)
+        -Grep -v keyword /location (List file that dose not match the file )
+        -Grep -n keyword /location (list the line number)
+        -Grep -c keyword /location (list number of finds)
+        -Grep  ^keyword /location (list starting with keyword)
+        -Grep keyword$ /location (List ending keyword)
+        -Grep keyword /location > /newfile.txt  (search and redirect to other file)
+        -Grep keyword /location >> /newfile.txt (search and append to other file)
+        Find
+        -find /location -name filename (search by name)
+        -find /loction -size size (search by size)
+        -find /loction -size size (search by size)
+        -find /loction -user uname (search by user)
+        -find /loction -group gname (search by group)
+        -find /loction -perm 777 (search by permission)
+         #executable command 
+         -exe
+        -find /tata -user suraj -exec cp -rvf {} /backup/ \; (search all file and move it to backup)
+         #Head
+        -head /etc/passwd (shows top 10 line)
+        -head -n 5 /file (show top 5 line)
+        #Tail
+        -tail /file (show bottom 10 line)
+        -tail -n 5 /file (show bottom 5 line)
+        #WC
+        wc /location (-l line, -w word, -c char) (
+    show count of line word and charecter)
