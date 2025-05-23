@@ -276,7 +276,7 @@
 
 
 
-    Regular expression
+# Regular expression
 	It is a process of search file and directory basis on specific word, name, permission,         ownership etc.
     1)grep
     2)find    
@@ -364,6 +364,69 @@
 	show count of line word and charecter
 	
 	wc /location (-l line, -w word, -c char)
+
+# change date 
+	[ec2-user@ip-172-31-93-21 ~]$systemctl disable chronyd
+ 	-Removed '/etc/systemd/system/multi-user.target.wants/chronyd.service'.
+  	[ec2-user@ip-172-31-93-21 ~]$ sudo systemctl stop chronyd
+	[ec2-user@ip-172-31-93-21 ~]$ timedatectl set-time "2025-05-23 3:24:00"
+
+
+# crontab
+  exicute and rum job multiple times.
+
+  to set job 
+   	#crontab -e
+    	*	*	*	*	*	<set job here>
+
+  1-minutes of hr (0-59)
+  2-hours of day (0-23)
+  3-days  of a month (1-31)
+  4-months of year (1-12)
+  5-days of a week (0-6) (1-mon,2-tues)
+
+  set crontab
+  #crontab -e
+  list crontab
+  #crontab -l
+  list crontab by user
+  #crontab -u suraj -l
+  remove crontab
+  #crontab -r
+  restric access to crontab
+  #vim /etc/cron.deny
+  username
+  :wq
+  check crontab log
+  #cat /var/log/cron
+
+  for follow crontab last 10 line
+  #tail -f /var/log/cron
+
+  to run a job in sequence add the jobs in one file 
+  add the file to crontab 
+
+# set job using script 
+	1)make a folder
+ 	2)make a file.sh
+	  	#!/bin/bash
+	   	hodstname >> ./info.txt
+	    	date >> ./info.txt
+	     	:wq
+	3) give access to file #chmod 755 /folder/file.sh
+ 	4) add the file in crontab 
+  
+  # Sudo
+	Super user dom
+ 	allows normal user to do admin task
+  	add the user in /etc/sudoers
+
+   to add user to sudo 
+   #vim /etc/sudoers
+
+   
+   
+  
 
     
     
