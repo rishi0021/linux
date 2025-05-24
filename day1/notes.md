@@ -457,9 +457,73 @@
   	1-power off the system using the command 
    	2-
  	Partition type
-  		-primary 
+  		-primary
+    			max 4 on one hard disk
     		-extention
-      
+      			only one extended on one hard disk in primary
+      		-logical
+      			starts with 5th partition 
+	 		take space from extended
+    	show specific partition 
+     	#fdisk -l /dev/sdb
+
+	to create partition 
+ 	fdisk dev/sdb 
+  # file system 
+  	structure to save files on partion 
+  # Mount 
+  	Temprary
+   	#mkdir pune
+    	#mount /dev/sdb1 /pune
+     	#lsblk
+
+        Permanent
+	#vim /etc/fstab
+ 	/dev/sdb1  /pune  ect 4 desault 0 0
+  	:wq
+
+   	to mount all partion 
+# steps 
+	select a storage space
+ 	#fdisk dev/sdb
+  	create a partion
+	   	Command (m for help): n
+	    	Using default response p.
+		Partition number (1-4, default 1):
+		First sector (2048-20557790, default 2048):
+		Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-20557790,default20557790):+2gb
+		Created a new partition 1 of type 'Linux' and of size 1.9 GiB.
+
+   	save the changes using W command
+    	assign a file system
+     	mount the partition to a folder 
+      		Vim /etc/fstab
+		/div/xvda3 /pune1 ext4 defaults 0 0
+		:wq
+  	mount -a
+
+    to check the UID of block 
+    #blkid /dev/sdb1
+# LVM
+	Swap ->Vram 
+ check swap space
+ #free -m
+
+ extend/create swap
+ #fdisk dev/sdb
+
+ 	create partiton with requried size (with help of t) = 82
+	:w
+ convert partiton in swap
+ mkswap /dev/sdb1
+
+ on swap(activate)
+ swapon /dev/sdb1
+
+ 
+
+  	
+    
    
 
    
