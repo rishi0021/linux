@@ -138,7 +138,10 @@
         /home/sachin -home directory 
         /bin/bash -shell
     3) set password 
-        password username
+        passwd username
+
+ 	using echo
+  	echo qazxsweddc | passwd --stdin user 
         
     4) check password 
         grep sachin /etc/shadow
@@ -423,6 +426,41 @@
 
    to add user to sudo 
    #vim /etc/sudoers
+   then copy the root line and paste bellow it change the root with user   line no 100
+   root ALL=(ALL) ALL
+   Rishi ALL=(ALL) ALL
+
+   other way (add user to a group which has admin rights) 
+   gpasswd	-a	harry wheel  (as wheel is a system group it has the admin right hence harry gets admi rights)
+
+   to add group as admin
+   #vim /etc/sudoers
+   then copy the wheel line and paste bellow it change the root with user   line no 108
+   %wheel ALL=(ALL) ALL
+   %groupname ALL=(ALL) ALL
+
+   login as root 
+   sudo su 
+
+   to add Sudo for specific task 
+   user ALL=/user/sbin/useradd
+
+# Disk Management
+	Dish partition
+ 		sata -/dev/sda
+   		pata -/dev/hda
+     		virtual-/dev/vda
+        to see the disk 
+        lsblk
+
+ 	how to add adtional storage on VB
+  	1-power off the system using the command 
+   	2-
+ 	Partition type
+  		-primary 
+    		-extention
+      
+   
 
    
    
