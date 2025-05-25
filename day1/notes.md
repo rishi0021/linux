@@ -101,7 +101,7 @@
           ctr + ->redo
           gg ->go to top
           g ->go to buttom
-          ng ->go to n line
+          nG ->go to n line
 
   # user
      what is a user
@@ -496,6 +496,7 @@
 
    	save the changes using W command
     	assign a file system
+        #mkfs.xfs /dev/sdb1
      	mount the partition to a folder 
       		Vim /etc/fstab
 		/div/xvda3 /pune1 ext4 defaults 0 0
@@ -504,23 +505,44 @@
 
     to check the UID of block 
     #blkid /dev/sdb1
-# LVM
+# Swap
 	Swap ->Vram 
- check swap space
- #free -m
+ steps to create a swap
+	 -check swap space
+	 #free -m
+	
+	 -extend/create swap
+	 #fdisk dev/sdb
+	
+	 -create partiton with requried size (with help of t) = 82
+		:w
+	 -convert partiton in swap
+	 mkswap /dev/sdb1
+	
+	 -on swap(activate)
+	 swapon /dev/sdb1
 
- extend/create swap
- #fdisk dev/sdb
+  	-add record in /etc/fstab
+   	vim /etc/fstab
+    	/dev/sdb1 swap swap defaults 0 0
+	:wq
 
- 	create partiton with requried size (with help of t) = 82
-	:w
- convert partiton in swap
- mkswap /dev/sdb1
+  	#mount -a
+   	#free -m
 
- on swap(activate)
- swapon /dev/sdb1
+ 	-for remove swap 
+  	#swapoff /dev/sdb1
+   	#vim /etc/fstab
+    	delete the swap line
 
- 
+     	fdisk /dev/sdb
+      	remove swap partition
+
+       #free -m
+
+# LVM
+	logical volume manager
+ 	
 
   	
     
